@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      spacing="20" style="-fx-background-color: #f5f5f5;">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <Label text="Dashboard" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS" />
+        <TextField promptText="Search" />
+        <Label text="Monday, July 2" />
+    </HBox>
+
+    <HBox spacing="20">
+        <!-- Total Revenue Card -->
+        <VBox styleClass="stat-card" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 8;">
+            <Label text="Total Revenue" style="-fx-text-fill: #666;"/>
+            <HBox alignment="BASELINE_LEFT" spacing="10">
+                <Label text="\$12,896" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                <Label text="+3.67%" style="-fx-text-fill: #4CAF50;"/>
+            </HBox>
+        </VBox>
+
+        <!-- Total Expense Card -->
+        <VBox styleClass="stat-card" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 8;">
+            <Label text="Total Expense" style="-fx-text-fill: #666;"/>
+            <HBox alignment="BASELINE_LEFT" spacing="10">
+                <Label text="\$6,886" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                <Label text="-2.67%" style="-fx-text-fill: #F44336;"/>
+            </HBox>
+        </VBox>
+
+        <!-- Total Reservations Card -->
+        <VBox styleClass="stat-card" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 8;">
+            <Label text="Total Reservations" style="-fx-text-fill: #666;"/>
+            <HBox alignment="BASELINE_LEFT" spacing="10">
+                <Label text="1874" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                <Label text="+2.54%" style="-fx-text-fill: #4CAF50;"/>
+            </HBox>
+        </VBox>
+
+        <!-- Occupied Table Card -->
+        <VBox styleClass="stat-card" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 8;">
+            <Label text="Occupied Table / h" style="-fx-text-fill: #666;"/>
+            <HBox alignment="BASELINE_LEFT" spacing="10">
+                <Label text="75%" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                <Label text="-2.57%" style="-fx-text-fill: #F44336;"/>
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+        <!-- Current Reservations Section -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Current Reservations" style="-fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Hyperlink text="View All" />
+            </HBox>
+            <TableView VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="Guest" />
+                    <TableColumn text="Time" />
+                    <TableColumn text="Table" />
+                    <TableColumn text="People" />
+                    <TableColumn text="Status" />
+                    <TableColumn text="Action" />
+                </columns>
+            </TableView>
+        </VBox>
+
+        <!-- Average Check Size Chart Section -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Average Check Size (USD)" style="-fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <ToggleButton text="Weekly" selected="true" />
+                <ToggleButton text="Monthly" />
+            </HBox>
+            <!-- Placeholder for the chart -->
+            <Pane VBox.vgrow="ALWAYS" style="-fx-background-color: #f5f5f5;">
+                <Label text="Chart here"
+                       alignment="CENTER"
+                       style="-fx-text-fill: #666;"/>
+            </Pane>
+        </VBox>
+    </HBox>
+
+</VBox>
